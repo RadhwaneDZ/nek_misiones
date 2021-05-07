@@ -5,6 +5,7 @@ Config.Misiones = {
 
     Traducciones = {
         PedText = "¿Quieres hacer algunos trabajillos?",
+        PedVentaText = "Dejame tus cositas aqui que yo te doy un precio a cambio por ellas.",
         DeleteNotification = "Pulsa ~y~E ~s~para entregar el vehiculo",
         FinalizarMilitar = "Deja el camion ahi y toma tu recompensa",
         CopCanGetYou = "Recuerda que la policia puede pararte, asi que debes llevar el maximo cuidado posible y que no te paren.",
@@ -29,12 +30,24 @@ Config.Misiones = {
         UnloadingPlane = "Descargando Avion...",
         ClosePlaneDoor = "Cerrando compuerta...",
         BackPlane = "Trae de vuelta el avion",
-        PlaneBackPista = "Aterriza el avion en la pista, y llevalo hasta el fondo de la pista, tendras la recompensa"
+        PlaneBackPista = "Aterriza el avion en la pista, y llevalo hasta el fondo de la pista, tendras la recompensa",
+        NoObject = "No llevas ese objeto encima",
     },
 
-    Ped = {
-        Position = vector4(3310.757, 5176.253, 18.61458, -124.3825),
-        Hash = 'u_m_y_antonb'
+    Peds = {
+        PedMisiones = {
+            Position = vector4(3310.757, 5176.253, 18.61458, -124.3825),
+            Hash = 'u_m_y_antonb'
+        },
+
+        PedVenta = {
+            Position = vector4(3311.416, 5173.99, 22.52137, 142.1529),
+            Hash = 'u_m_y_antonb',
+            Price = {
+                Max = 1000,
+                Min = 200
+            }
+        }
     },
 
     Misiones = {
@@ -62,7 +75,7 @@ Config.Misiones = {
             { label = "Mision al Azar", value = "azar_mission" },
             { label = "Entrega el cargamento militar", value = "militar_mission" },
             { label = "Lleva el helicoptero", value = "helicopter_mission" },
-            { label = "Pilota el avion lleno de droga", value = "plane_mission" },
+            { label = "Pilota el avion militar", value = "plane_mission" },
             --{ label = "Simplemente conduce...", value = "drive_mission" },
             --{ label = "Entrega el cargamento en el monte chilliad", value = "entregar_mission" },
         },
