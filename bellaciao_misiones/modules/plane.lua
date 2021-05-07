@@ -55,9 +55,30 @@ function plane_mission()
                         Wait(2000)
                         FreezeEntityPosition(inVeh, false)
                         Wait(1000)
-                        activeGeneral = 2
+                        activeGeneral = false
                         ESX.ShowNotification(Config.Misiones.Traducciones.BackPlane)
                         SetNewWaypoint(Config.Misiones.Misiones.Plane.Posiciones.Plane1.coords.x, Config.Misiones.Misiones.Plane.Posiciones.Plane1.coords.y)
+                        phase = 3
+                    end
+                elseif phase == 3 then
+                    distance = Vdist(pedCoords, Config.Misiones.Misiones.Plane.Posiciones.Plane1.coords.x, Config.Misiones.Misiones.Plane.Posiciones.Plane1.coords.y, Config.Misiones.Misiones.Plane.Posiciones.Plane1.coords.z)
+                    if distance <= 500 and activeGeneral == false then
+                        activeGeneral = true
+                        ESX.ShowNotification(Config.Misiones.Traducciones.PlaneBackPista)
+                    elseif activeGeneral == true then
+                        msec = 0
+                        if distance <= 10 then
+                            DeleteVehicle(inVeh)
+                            FreezeEntityPosition(playerPed, true)
+                            TaskStartScenarioInPlace(PlayerPedId(), "PROP_HUMAN_BUM_BIN", 0, true)
+                            ESX.ShowNotification(Config.Misiones.Traducciones.DoHelicopter)
+                            Wait(4500)
+                            ClearPedTasks(playerPed)
+                            FreezeEntityPosition(playerPed, false)
+                            ESX.ShowNotification(Config.Misiones.Traducciones.EndMission)
+                            activeGeneral = false
+                            phase = 0
+                        end
                     end
                 end
             elseif phase == 0 then
