@@ -7,18 +7,19 @@ Citizen.CreateThread(function()
     end
     AddPeds()
     AddPed(Config.Misiones.Misiones.Helicopter.Posiciones.Ped.coords.x, Config.Misiones.Misiones.Helicopter.Posiciones.Ped.coords.y, Config.Misiones.Misiones.Helicopter.Posiciones.Ped.coords.z, Config.Misiones.Misiones.Helicopter.Posiciones.Ped.coords.w, Config.Misiones.Misiones.Helicopter.Posiciones.Ped.model)
+    AddPed(Config.Misiones.Peds.PedVenta.Position.x, Config.Misiones.Peds.PedVenta.Position.y, Config.Misiones.Peds.PedVenta.Position.z, Config.Misiones.Peds.PedVenta.Position.w, Config.Misiones.Peds.PedVenta.Hash)
 end)
 
 function AddPeds()
     --DeletePed(ped)
 
-    local pedHash = Config.Misiones.Ped.Hash
+    local pedHash = Config.Misiones.Peds.PedMisiones.Hash
 	RequestModel(pedHash)
 	while not HasModelLoaded(pedHash) do
         Wait(0)
     end
 	
-	local ped = CreatePed(4, pedHash, Config.Misiones.Ped.Position)
+	local ped = CreatePed(4, pedHash, Config.Misiones.Peds.PedMisiones.Position)
 			SetEntityAsMissionEntity(ped)
 			SetBlockingOfNonTemporaryEvents(ped, true)
 			FreezeEntityPosition(ped, true)
