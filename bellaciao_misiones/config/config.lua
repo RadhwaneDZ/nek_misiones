@@ -29,6 +29,7 @@ Config.Misiones = {
         UnloadingPlane = "Descargando Avion...",
         ClosePlaneDoor = "Cerrando compuerta...",
         BackPlane = "Trae de vuelta el avion",
+        PlaneBackPista = "Aterriza el avion en la pista, y llevalo hasta el fondo de la pista, tendras la recompensa"
     },
 
     Ped = {
