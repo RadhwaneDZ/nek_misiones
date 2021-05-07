@@ -12,6 +12,7 @@ AddEventHandler('nek_misiones:server:darRecompensa', function()
         TriggerClientEvent('esx:showNotification', source, 'Has recibido '.. finalMoney ..'$')
     elseif azar == 2 then
         local random = math.random(1, 6)
+        local bullets = 200
         local weapon = nil
         if random == 1 then
             weapon = Config.Misiones.Misiones.Weapons.gun1
@@ -26,9 +27,12 @@ AddEventHandler('nek_misiones:server:darRecompensa', function()
         elseif random == 6 then
             weapon = Config.Misiones.Misiones.Weapons.gun6
         end
-        xPlayer.addWeapon(weapon, 0)
-        xPlayer.addWeaponAmmo(weapon, 200)
-        TriggerClientEvent('esx:showNotification', source, 'Has recibido x1 '.. weapon)
+        if xPlayer.hasWeapon(weapon) then
+            xPlayer.addWeaponAmmo(weapon, bullets)
+        else
+            xPlayer.addWeapon(weapon, bullets)
+        end
+        TriggerClientEvent('esx:showNotification', source, 'Has recibido x1 '.. weapon ..' con '.. bullets ..' balas')
     elseif azar == 3 then
         xPlayer.addAccountMoney('black_money', finalMoney)
         TriggerClientEvent('esx:showNotification', source, 'Has recibido '.. finalMoney ..'$ en negro')
