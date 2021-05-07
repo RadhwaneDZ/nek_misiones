@@ -70,7 +70,7 @@ function helicopter_mission()
                         vector = vector3(pedCoords.x, pedCoords.y, pedCoords.z + 1.00)
                         ESX.ShowFloatingHelpNotification(Config.Misiones.Traducciones.TakeFinalReward, vector)
                         if IsControlJustPressed(0, 38) then
-                            TriggerServerEvent('nek_missions:server:helicopter:giveObject')
+                            TriggerServerEvent('nek_missions:server:helicopter:giveObject', 'mission')
                             ExecuteCommand(Config.Misiones.Traducciones.DoHelicopter)
                             TaskStartScenarioInPlace(PlayerPedId(), "PROP_HUMAN_BUM_BIN", 0, true)
                             Wait(5000)
