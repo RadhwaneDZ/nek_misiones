@@ -1,5 +1,5 @@
 function plane_mission()
-    local activeGeneral = 0
+    local activeGeneral = nil
     local activeGeneral2 = false
     local phase = nil
     local spawned = false
@@ -10,7 +10,7 @@ function plane_mission()
     Wait(500)
     SetNewWaypoint(Config.Misiones.Misiones.Plane.Posiciones.Plane1.coords.x, Config.Misiones.Misiones.Plane.Posiciones.Plane1.coords.y)
 
-    phase = 2
+    phase = 1
 
     Citizen.CreateThread(function()
         while true do
@@ -71,13 +71,14 @@ function plane_mission()
                             DeleteVehicle(inVeh)
                             FreezeEntityPosition(playerPed, true)
                             TaskStartScenarioInPlace(PlayerPedId(), "PROP_HUMAN_BUM_BIN", 0, true)
-                            ESX.ShowNotification(Config.Misiones.Traducciones.DoHelicopter)
+                            ExecuteCommand(Config.Misiones.Traducciones.DoHelicopter)
                             Wait(4500)
                             ClearPedTasks(playerPed)
                             FreezeEntityPosition(playerPed, false)
                             ESX.ShowNotification(Config.Misiones.Traducciones.EndMission)
                             activeGeneral = false
                             phase = 0
+                            TriggerServerEvent('nek_misiones:server:darRecompensa')
                         end
                     end
                 end
