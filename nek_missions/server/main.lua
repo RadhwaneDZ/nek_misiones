@@ -1,5 +1,5 @@
 ESX = nil
-TriggerEvent(Config.Misiones.esxEvent, function(obj) ESX = obj end)
+TriggerEvent(Config.Misiones.esxEvent, function(obj) ESX = Config.Misiones.ESXequal end)
 
 RegisterNetEvent('nek_misiones:server:darRecompensa')
 AddEventHandler('nek_misiones:server:darRecompensa', function()
