@@ -2,7 +2,7 @@ ESX = nil
 
 Citizen.CreateThread(function()
     while ESX == nil do
-        TriggerEvent(Config.Misiones.esxEvent, function(obj) ESX = Config.Misiones.ESXequal end)
+        TriggerEvent(Config.Misiones.esxEvent, function(obj) ESX = obj end)
         Citizen.Wait(0)
     end
     AddPeds()
