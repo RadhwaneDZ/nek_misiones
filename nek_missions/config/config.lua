@@ -2,6 +2,7 @@ Config = {}
 
 Config.Misiones = {
     esxEvent = 'esx:getSharedObject',
+    ESX = obj,
 
     Traducciones = {
         PedText = "¿Quieres hacer algunos trabajillos?",
