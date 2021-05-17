@@ -75,17 +75,13 @@ function OpenMissionMenu()
         local data = data.current.value
 
         if data == 'azar_mission' then
-            local azar = math.random(1, 5)
+            local azar = math.random(1, 3)
             if azar == 1 then
                 militar_mission()
             elseif azar == 2 then
-                drive_mission()
-            elseif azar == 3 then
                 plane_mission()
-            elseif azar == 4 then
+            elseif azar == 3 then
                 helicopter_mission()
-            elseif azar == 5 then
-                entregar_mission()
             end
         elseif data == 'militar_mission' then
             militar_mission()
@@ -103,8 +99,3 @@ function OpenMissionMenu()
 		menu.close()
 	end)
 end
-
--- FUNCIONES / MISIONES
-RegisterCommand('test', function()
-    plane_mission()
-end)
