@@ -19,11 +19,11 @@ Citizen.CreateThread(function()
             if distance <= 3 then
                 inMarker = "npc1"
                 time = 0
-                ESX.ShowFloatingHelpNotification(Config.Misiones.Traducciones.PedText, vector3(Config.Misiones.Peds.PedMisiones.Position.x, Config.Misiones.Peds.PedMisiones.Position.y, Config.Misiones.Peds.PedMisiones.Position.z + 1.9))
+                ShowFloatingHelpNotification(Config.Misiones.Traducciones.PedText, vector3(Config.Misiones.Peds.PedMisiones.Position.x, Config.Misiones.Peds.PedMisiones.Position.y, Config.Misiones.Peds.PedMisiones.Position.z + 1.9))
             elseif distance2 <= 3 then
                 inMarker = "npc2"
                 time = 0
-                ESX.ShowFloatingHelpNotification(Config.Misiones.Traducciones.PedVentaText, vector3(Config.Misiones.Peds.PedVenta.Position.x, Config.Misiones.Peds.PedVenta.Position.y, Config.Misiones.Peds.PedVenta.Position.z + 1.9))
+                ShowFloatingHelpNotification(Config.Misiones.Traducciones.PedVentaText, vector3(Config.Misiones.Peds.PedVenta.Position.x, Config.Misiones.Peds.PedVenta.Position.y, Config.Misiones.Peds.PedVenta.Position.z + 1.9))
             end
 
             if inMarker == "npc1" and IsControlJustPressed(0, 38) then
