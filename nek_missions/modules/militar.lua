@@ -27,7 +27,7 @@ function militar_mission()
                     if distance <= 3 and isInVeh then
                         msec = 0
                         vector = vector3(Config.Misiones.Misiones.Militar.Posiciones.DeleteCar.x, Config.Misiones.Misiones.Militar.Posiciones.DeleteCar.y, Config.Misiones.Misiones.Militar.Posiciones.DeleteCar.z + 2.00)
-                        ESX.ShowFloatingHelpNotification(Config.Misiones.Traducciones.DeleteNotification, vector)
+                        ShowFloatingHelpNotification(Config.Misiones.Traducciones.DeleteNotification, vector)
                         if IsControlJustPressed(0, 38) then
                             DeleteVehicle(inVeh)
                             phase = 2
@@ -54,7 +54,7 @@ function militar_mission()
                     if distance <= 6 then
                         msec = 0
                         vector = vector3(pedCoords.x, pedCoords.y, pedCoords.z + 1.00)
-                        ESX.ShowFloatingHelpNotification(Config.Misiones.Traducciones.DeleteNotification, vector)
+                        ShowFloatingHelpNotification(Config.Misiones.Traducciones.DeleteNotification, vector)
                         if IsControlJustPressed(0, 38) then
                             DeleteVehicle(inVeh)
                             phase = 0
