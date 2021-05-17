@@ -38,7 +38,7 @@ function plane_mission()
                     if distance <= 10 and activeGeneral == 0 then
                         msec = 0
                         vector = vector3(pedCoords.x, pedCoords.y, pedCoords.z + 1.50)
-                        ESX.ShowFloatingHelpNotification(Config.Misiones.Traducciones.DoPlaneAction, vector)
+                        ShowFloatingHelpNotification(Config.Misiones.Traducciones.DoPlaneAction, vector)
                             if IsControlJustPressed(0, 38) then
                                 activeGeneral = 1
                             end
