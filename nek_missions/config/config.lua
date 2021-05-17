@@ -2,7 +2,7 @@ Config = {}
 
 Config.Misiones = {
     esxEvent = 'esx:getSharedObject',
-    ESX = obj,
+    ESXequal = obj, -- This is ESX = obj in the triggerevent
 
     Traducciones = {
         PedText = "¿Quieres hacer algunos trabajillos?",
@@ -67,7 +67,7 @@ Config.Misiones = {
         },
 
         Object = {
-            name = 'missions_rotorHeli', --Objeto propio pero puede cambiarse por la que quieras, recomendamos el objeto propio porque no se puede utilizar para nada, solo para la mision
+            name = 'missions_rotorHeli', -- Own object but it can be changed for the one you want, we recommend the own object because it cannot be used for anything, only for the mission
             Max = 10,
             Min = 1,
         },
@@ -77,8 +77,11 @@ Config.Misiones = {
             { label = "Entrega el cargamento militar", value = "militar_mission" },
             { label = "Lleva el helicoptero", value = "helicopter_mission" },
             { label = "Pilota el avion militar", value = "plane_mission" },
-            --{ label = "Simplemente conduce...", value = "drive_mission" },
-            --{ label = "Entrega el cargamento en el monte chilliad", value = "entregar_mission" },
+            
+            -- DON'T ACTIVATE IT, I'M UPDATING THIS SCRIPT --
+                --{ label = "Simplemente conduce...", value = "drive_mission" },
+                --{ label = "Entrega el cargamento en el monte chilliad", value = "entregar_mission" },
+            -------------------------------------------
         },
 
         Militar = {
