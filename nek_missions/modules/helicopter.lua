@@ -52,7 +52,7 @@ function helicopter_mission()
     
                     if distance <= 3 then
                         msec = 0
-                        ESX.ShowFloatingHelpNotification(Config.Misiones.Traducciones.TakeDrugPed, vector3(Config.Misiones.Misiones.Helicopter.Posiciones.Ped.coords.x, Config.Misiones.Misiones.Helicopter.Posiciones.Ped.coords.y, Config.Misiones.Misiones.Helicopter.Posiciones.Ped.coords.z + 1.00))
+                        ShowFloatingHelpNotification(Config.Misiones.Traducciones.TakeDrugPed, vector3(Config.Misiones.Misiones.Helicopter.Posiciones.Ped.coords.x, Config.Misiones.Misiones.Helicopter.Posiciones.Ped.coords.y, Config.Misiones.Misiones.Helicopter.Posiciones.Ped.coords.z + 1.00))
                         if IsControlJustPressed(0, 38) then
                             TriggerServerEvent('nek_missions:server:helicopter:getObject')
                             phase = 4
@@ -68,7 +68,7 @@ function helicopter_mission()
                     if distance < 5 then
                         msec = 0
                         vector = vector3(pedCoords.x, pedCoords.y, pedCoords.z + 1.00)
-                        ESX.ShowFloatingHelpNotification(Config.Misiones.Traducciones.TakeFinalReward, vector)
+                        ShowFloatingHelpNotification(Config.Misiones.Traducciones.TakeFinalReward, vector)
                         if IsControlJustPressed(0, 38) then
                             TriggerServerEvent('nek_missions:server:helicopter:giveObject', 'mission')
                             ExecuteCommand(Config.Misiones.Traducciones.DoHelicopter)
@@ -89,7 +89,7 @@ function helicopter_mission()
                     if distance < 150 and distance > 45 and activeGeneral == 0 then    
                         msec = 0
                         vector = vector3(pedCoords.x, pedCoords.y, pedCoords.z + 1.00)
-                        ESX.ShowFloatingHelpNotification(Config.Misiones.Traducciones.GoDownHelicopter, vector)
+                        ShowFloatingHelpNotification(Config.Misiones.Traducciones.GoDownHelicopter, vector)
                     elseif distance < 45 and activeGeneral == 0 then
                         activeGeneral = 1
                         DeleteVehicle(inVeh)
