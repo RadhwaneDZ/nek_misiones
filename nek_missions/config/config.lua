@@ -2,7 +2,6 @@ Config = {}
 
 Config.Misiones = {
     esxEvent = 'esx:getSharedObject',
-    ESXequal = obj, -- This is ESX = obj in the triggerevent
 
     Traducciones = {
         PedText = "¿Quieres hacer algunos trabajillos?",
